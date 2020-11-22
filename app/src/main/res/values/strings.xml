@@ -1,3 +1,15 @@
 <resources>
-    <string name="app_name">Shophisticated</string>
+    <string name="app_name" translatable="false">Shophisticated</string>
+
+    <string name="home">Home</string>
+    <string name="history">History</string>
+    <string name="sell">Sell</string>
+    <string name="items">Items</string>
+    <string name="image" translatable="false">Image</string>
+    <string name="item_name">Item name</string>
+    <string name="amount">Amount</string>
+    <string name="price">Price</string>
+    <string name="button">Submit</string>
+    <string name="progress">Saving…</string>
+
 </resources>

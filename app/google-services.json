@@ -1,0 +1,48 @@
+{
+  "project_info": {
+    "project_number": "689781326915",
+    "firebase_url": "https://shophisticated-fa274.firebaseio.com",
+    "project_id": "shophisticated-fa274",
+    "storage_bucket": "shophisticated-fa274.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:689781326915:android:e54f3d3b26bdcaf05cc0f6",
+        "android_client_info": {
+          "package_name": "id.ac.ui.cs.mobileprogramming.usmansidiq.shophisticated"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "689781326915-15i9g8ptb3c94na1imnd3c9q8nut8i5q.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "id.ac.ui.cs.mobileprogramming.usmansidiq.shophisticated",
+            "certificate_hash": "f5ebadde16fce71dcebf181518157f6b6858faa9"
+          }
+        },
+        {
+          "client_id": "689781326915-vlhgva96199khttoqrpjvlou3lgqhg3u.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyDx_hZZON_rbKqscGbTLO__OS88eZKbXAs"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "689781326915-vlhgva96199khttoqrpjvlou3lgqhg3u.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
