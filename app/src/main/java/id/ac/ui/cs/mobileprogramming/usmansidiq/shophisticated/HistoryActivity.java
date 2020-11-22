@@ -47,6 +47,8 @@ public class HistoryActivity extends AppCompatActivity {
                 .getReference()
                 .child("Sell");
 
+        query.keepSynced(true);
+
         FirebaseRecyclerOptions<Item> options =
                 new FirebaseRecyclerOptions.Builder<Item>()
                         .setQuery(query, new SnapshotParser<Item>() {
