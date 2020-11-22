@@ -1,29 +1,21 @@
 package id.ac.ui.cs.mobileprogramming.usmansidiq.shophisticated;
 
-import androidx.annotation.NonNull;
-import androidx.appcompat.app.ActionBar;
-import androidx.appcompat.app.AppCompatActivity;
-
 import android.content.Context;
-import android.content.Intent;
 import android.graphics.Color;
 import android.net.ConnectivityManager;
 import android.net.NetworkInfo;
 import android.os.Bundle;
-import android.view.MenuItem;
 import android.widget.TextView;
 
-import com.google.android.material.bottomnavigation.BottomNavigationView;
+import androidx.appcompat.app.AppCompatActivity;
 
-public class MainActivity extends AppCompatActivity {
+public class HomeActivity extends AppCompatActivity {
+    private static TextView internetStatus;
 
-    private TextView internetStatus;
-    private ActionBar toolbar;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
-
         internetStatus = (TextView) findViewById(R.id.internet_status);
 
         // At activity startup we manually check the internet status and change
@@ -36,22 +28,17 @@ public class MainActivity extends AppCompatActivity {
             changeTextStatus(false);
         }
 
-        toolbar = getSupportActionBar();
-
-        BottomNavigationView navigation = findViewById(R.id.bottomNavigationView);
-        navigation.setOnNavigationItemSelectedListener(mOnNavigationItemSelectedListener);
-
-        toolbar.setTitle(R.string.home);
     }
 
+    // Method to change the text status
     public void changeTextStatus(boolean isConnected) {
 
         // Change status according to boolean value
         if (isConnected) {
-            internetStatus.setText(R.string.connected);
+            internetStatus.setText("Internet Connected.");
             internetStatus.setTextColor(Color.parseColor("#00ff00"));
         } else {
-            internetStatus.setText(R.string.disconnected);
+            internetStatus.setText("Internet Disconnected.");
             internetStatus.setTextColor(Color.parseColor("#ff0000"));
         }
     }
@@ -70,20 +57,4 @@ public class MainActivity extends AppCompatActivity {
         Shophisticated.activityResumed();// On Resume notify the Application
     }
 
-    private BottomNavigationView.OnNavigationItemSelectedListener mOnNavigationItemSelectedListener
-            = new BottomNavigationView.OnNavigationItemSelectedListener() {
-
-        @Override
-        public boolean onNavigationItemSelected(@NonNull MenuItem item) {
-            switch (item.getItemId()) {
-                case R.id.navigation_history:
-                    startActivity(new Intent(MainActivity.this, HistoryActivity.class));
-                    return true;
-                case R.id.navigation_sell:
-                    startActivity(new Intent(MainActivity.this, SellActivity.class));
-                    return true;
-            }
-            return false;
-        }
-    };
 }

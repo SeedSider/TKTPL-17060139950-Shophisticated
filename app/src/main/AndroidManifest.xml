@@ -2,6 +2,8 @@
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
     package="id.ac.ui.cs.mobileprogramming.usmansidiq.shophisticated">
     <uses-permission android:name="android.permission.INTERNET" />
+    <uses-permission android:name="android.permission.ACCESS_NETWORK_STATE" />
+    <uses-permission android:name="android.permission.ACCESS_WIFI_STATE" />
 
     <application
         android:allowBackup="true"
@@ -10,13 +12,6 @@
         android:supportsRtl="true"
         android:theme="@style/AppTheme"
         android:name=".Shophisticated">
-        <!--
-               Set to true if your app is Standalone, that is, it does not require the handheld
-               app to run.
-        -->
-        <meta-data
-            android:name="com.google.android.wearable.standalone"
-            android:value="true" />
 
         <activity
             android:name=".HistoryActivity"
@@ -32,6 +27,19 @@
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
+
+        <receiver
+            android:name=".ConnectivityDetection"
+            android:enabled="true" >
+            <intent-filter>
+
+                <!-- Intent filters for broadcast receiver -->
+                <action android:name="android.net.conn.CONNECTIVITY_CHANGE" />
+                <action android:name="android.net.wifi.WIFI_STATE_CHANGED" />
+                <action android:name="android.net.wifi.STATE_CHANGE" />
+            </intent-filter>
+        </receiver>
+
     </application>
 
 </manifest>

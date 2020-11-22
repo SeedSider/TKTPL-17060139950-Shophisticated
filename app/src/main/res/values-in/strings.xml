@@ -9,4 +9,6 @@
     <string name="price">Harga</string>
     <string name="button">Simpan</string>
     <string name="progress">Menyimpan...</string>
+    <string name="connected">Terhubung</string>
+    <string name="disconnected">Tidak Terhubung</string>
 </resources>

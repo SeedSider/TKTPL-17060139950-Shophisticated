@@ -11,5 +11,7 @@
     <string name="price">Price</string>
     <string name="button">Submit</string>
     <string name="progress">Saving…</string>
+    <string name="connected">Connected</string>
+    <string name="disconnected">Disconnected</string>
 
 </resources>
