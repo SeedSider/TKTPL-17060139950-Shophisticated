@@ -4,6 +4,7 @@
     <string name="home">Home</string>
     <string name="history">History</string>
     <string name="sell">Sell</string>
+    <string name="about">About</string>
     <string name="items">Items</string>
     <string name="image" translatable="false">Image</string>
     <string name="item_name">Item name</string>
@@ -13,5 +14,9 @@
     <string name="progress">Saving…</string>
     <string name="connected">Connected</string>
     <string name="disconnected">Disconnected</string>
+    <string name="why_sell_permission">Why we need your permission?</string>
+    <string name="income_today">Today\'s Income</string>
+
+    <string name="reason">We need a permission to access your storage so you can send us images of your beautiful products.</string>
 
 </resources>

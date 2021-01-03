@@ -12,4 +12,9 @@
         android:id="@+id/navigation_sell"
         android:title="@string/sell"
         android:icon="@drawable/ic_add_foreground"/>
+
+    <item
+        android:id="@+id/navigation_about"
+        android:title="@string/about"
+        android:icon="@drawable/ic_about_foreground"/>
 </menu>

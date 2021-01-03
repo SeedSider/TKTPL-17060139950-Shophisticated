@@ -11,4 +11,8 @@
     <string name="progress">Menyimpan...</string>
     <string name="connected">Terhubung</string>
     <string name="disconnected">Tidak Terhubung</string>
+    <string name="why_sell_permission">Kenapa kami butuh persetujuan Anda?</string>
+    <string name="reason">Kami membutuhkan persetujuan anda untuk mengakses tempat penyimpanan anda agar anda bisa membagikan gambar dari produk-produk terbaik anda</string>
+    <string name="about">Tentang</string>
+    <string name="income_today">Penghasilan Hari Ini</string>
 </resources>

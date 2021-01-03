@@ -3,7 +3,6 @@ package id.ac.ui.cs.mobileprogramming.usmansidiq.shophisticated;
 import androidx.annotation.NonNull;
 import androidx.appcompat.app.ActionBar;
 import androidx.appcompat.app.AppCompatActivity;
-
 import android.content.Context;
 import android.content.Intent;
 import android.graphics.Color;
@@ -14,11 +13,18 @@ import android.view.MenuItem;
 import android.widget.TextView;
 
 import com.google.android.material.bottomnavigation.BottomNavigationView;
+import com.google.android.material.bottomnavigation.LabelVisibilityMode;
 
 public class MainActivity extends AppCompatActivity {
 
     private TextView internetStatus;
     private ActionBar toolbar;
+    public native String getIncome(String income);
+
+    static {
+        System.loadLibrary("native-lib");
+    }
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -39,6 +45,7 @@ public class MainActivity extends AppCompatActivity {
         toolbar = getSupportActionBar();
 
         BottomNavigationView navigation = findViewById(R.id.bottomNavigationView);
+        navigation.setLabelVisibilityMode(LabelVisibilityMode.LABEL_VISIBILITY_LABELED);
         navigation.setOnNavigationItemSelectedListener(mOnNavigationItemSelectedListener);
 
         toolbar.setTitle(R.string.home);
@@ -48,8 +55,9 @@ public class MainActivity extends AppCompatActivity {
 
         // Change status according to boolean value
         if (isConnected) {
-            internetStatus.setText(R.string.connected);
-            internetStatus.setTextColor(Color.parseColor("#00ff00"));
+            String income = String.valueOf(Preferences.getIncomeToday(getBaseContext()));
+            String incomeToday = getIncome(income);
+            internetStatus.setText(incomeToday);
         } else {
             internetStatus.setText(R.string.disconnected);
             internetStatus.setTextColor(Color.parseColor("#ff0000"));
@@ -61,6 +69,12 @@ public class MainActivity extends AppCompatActivity {
 
         super.onPause();
         Shophisticated.activityPaused();// On Pause notify the Application
+    }
+
+    @Override
+    protected void onStop () {
+        super .onStop() ;
+        startService( new Intent( this, NotificationService. class )) ;
     }
 
     @Override
@@ -81,6 +95,9 @@ public class MainActivity extends AppCompatActivity {
                     return true;
                 case R.id.navigation_sell:
                     startActivity(new Intent(MainActivity.this, SellActivity.class));
+                    return true;
+                case R.id.navigation_about:
+                    startActivity(new Intent(MainActivity.this, AboutActivity.class));
                     return true;
             }
             return false;

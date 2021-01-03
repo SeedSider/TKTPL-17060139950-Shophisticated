@@ -5,6 +5,14 @@ android {
     compileSdkVersion 29
     buildToolsVersion "29.0.3"
 
+    ndkVersion "22.0.7026061"
+    externalNativeBuild {
+        cmake {
+            path "src/main/cpp/CMakeLists.txt"
+            version "3.10.2"
+        }
+    }
+
     defaultConfig {
         applicationId "id.ac.ui.cs.mobileprogramming.usmansidiq.shophisticated"
         minSdkVersion 23
@@ -13,6 +21,11 @@ android {
         versionName "1.0"
 
         testInstrumentationRunner "androidx.test.runner.AndroidJUnitRunner"
+        externalNativeBuild {
+            cmake {
+                cppFlags ""
+            }
+        }
     }
 
     buildTypes {
